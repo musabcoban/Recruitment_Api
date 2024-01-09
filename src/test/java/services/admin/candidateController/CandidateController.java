@@ -1,4 +1,4 @@
-package services.admin.CandidateController;
+package services.admin.candidateController;
 
 public class CandidateController {
 
