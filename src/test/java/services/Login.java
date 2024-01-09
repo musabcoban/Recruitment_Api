@@ -25,6 +25,11 @@ public class Login {
 
     }
 
+
+
+
+
+
     public void verifyBody(String firstName,String lastName, String email,String id){
 
         Assert.assertEquals(firstName,response.jsonPath().getString("data.firstName"));
