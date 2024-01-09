@@ -4,3 +4,5 @@
     #Given admin connects to the "/api/admin/candidate" end point with an invalid candidate ID
    # Then admin verifies that the Status Code of the response is 404
     #Then admin sees the message "Could not find given subject id"
+
+
