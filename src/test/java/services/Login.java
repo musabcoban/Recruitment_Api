@@ -13,8 +13,8 @@ public class Login {
 
     public void loginRequest(){
         String loginBody="{\n" +
-                "  \"email\": \"LaishaCSS@yopmail.com\",\n" +
-                "  \"password\": \"@Rukiye1725\"\n" +
+                "  \"email\": \"Beau@yopmail.com\",\n" +
+                "  \"password\": \"Test123!\"\n" +
                 "}";
 
         response= RestAssured.given().contentType(ContentType.JSON).
