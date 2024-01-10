@@ -15,10 +15,9 @@ public class AdminCandidateController {
         login.sendAuthorizedRequest(str, ConfigurationReader.get("id"),token);
     }
 
-
     @Then("admin verifies that the Status Code of the response is {int}")
     public void adminVerifiesThatTheStatusCodeOfTheResponseIs(int str) {
-        login.verifyStatuseCode(str);
+        login.verifyStatusCode(str);
     }
 
     @Then("admin verifies the response body has mandatory fields")
