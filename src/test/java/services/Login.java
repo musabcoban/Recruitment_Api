@@ -22,13 +22,8 @@ public class Login {
                 when().post("auth/login").prettyPeek();
         firstName=response.jsonPath().getString("data.firstName");
         email=response.jsonPath().getString("data.email");
-
+        token=response.jsonPath().getString("data.token");
     }
-
-
-
-
-
 
     public void verifyBody(String firstName,String lastName, String email,String id){
 
@@ -59,7 +54,7 @@ public class Login {
                         .get(endpoint).prettyPeek();
 
     }
-    public void verifyStatuseCode(int statusCode){
+    public void verifyStatusCode(int statusCode){
         Assert.assertEquals(statusCode,response.statusCode());
     }
 
