@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
 
         features ="src/test/resources/features",
         glue = "step_Defs",
-        dryRun = false,
-        tags = "@wip"
+        dryRun = true,
+        tags = "@msb2"
 
 
 )
