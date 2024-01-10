@@ -1,19 +1,28 @@
 package services;
 
 import io.cucumber.java.en.*;
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import utilities.ConfigurationReader;
+
+import static io.restassured.RestAssured.given;
 
 public class AdminJobApplicationController_F {
-    @Given("I make a request with valid credentials for job all job application")
-    public void i_make_a_request_with_valid_credentials_for_job_all_job_application() {
+    Response response;
+    Login login = new Login();
 
-    }
-    @Then("Verify response with status code {int}")
-    public void verify_response_with_status_code(int statusCode) {
-
-    }
-    @Then("Verify response body")
-    public void verify_response_body() {
-
+    public void getAdminJopApplicationControllerF(){
+        String token =login.getToken(ConfigurationReader.get("fatma_admin"),ConfigurationReader.get("havva_pass"));
+        response= given().contentType(ContentType.JSON)
+                .queryParam("pageNumber",0)
+                .queryParam("pageSize",10)
+                .queryParam("searchKeyword","nikki")
+                .queryParam("sortBy","id")
+                .queryParam("sortDirection","asc")
+                .header("Authorization","Bearer "+token)
+                .get(ConfigurationReader.get("url22")+"admin/jobApplication/appliedJobs")
+                .prettyPeek();
     }
 
 }
