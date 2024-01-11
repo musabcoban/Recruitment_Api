@@ -1,6 +1,7 @@
 package step_Defs;
 
 import io.cucumber.java.en.*;
+import org.junit.Assert;
 import services.AdminJobApplicationController_F;
 
 public class AdminJobApplicationControllerStepDef {
@@ -11,9 +12,9 @@ public class AdminJobApplicationControllerStepDef {
         adminJobApplicationController_f.getAdminJopApplicationControllerF();
     }
 
-    @Then("Verify response with status code {int}")
+    @Then("Verify response with statuss code {int}")
     public void verify_response_with_status_code(int statusCode) {
-
+        adminJobApplicationController_f.verifyStatusCode_F(statusCode);
     }
 
     @Then("Verify response body")
