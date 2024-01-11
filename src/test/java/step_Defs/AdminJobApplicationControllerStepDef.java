@@ -19,7 +19,9 @@ public class AdminJobApplicationControllerStepDef {
 
     @Then("Verify response body")
     public void verify_response_body() {
-
+        adminJobApplicationController_f.verifyAdminJobResponseBodyContainsData("pageNumber");
+        adminJobApplicationController_f.verifyAdminJobResponseBodyContainsData("totalPages");
+        adminJobApplicationController_f.verifyAdminJobResponseBodyContainsData("totalCount");
     }
 
 }
