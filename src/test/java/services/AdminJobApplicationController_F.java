@@ -40,7 +40,7 @@ public class AdminJobApplicationController_F {
         Assert.assertTrue(jsonPath.getString("data").contains(dataControl));
     }
     public void changeInterviewStatus(){
-        given().contentType(ContentType.JSON)
+        response=given().contentType(ContentType.JSON)
                 .queryParam("interviewStatusId",263)
                 .header("Authorization","Bearer "+token)
                 .put(ConfigurationReader.get("url22")+"admin/jobApplication/changeStatus/"+applicationId)
