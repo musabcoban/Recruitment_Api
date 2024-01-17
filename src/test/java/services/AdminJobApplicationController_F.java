@@ -40,9 +40,9 @@ public class AdminJobApplicationController_F {
     public void verifyAdminJobResponseBodyContainsData(String dataControl){
         Assert.assertTrue(jsonPath.getString("data").contains(dataControl));
     }
-    public void changeInterviewStatus(){
+    public void changeInterviewStatus(int interviewStatusId){
         response=given().contentType(ContentType.JSON)
-                .queryParam("interviewStatusId",263)
+                .queryParam("interviewStatusId",interviewStatusId)
                 .header("Authorization","Bearer "+token)
                 .put(ConfigurationReader.get("url2")+"admin/jobApplication/changeStatus/"+applicationId)
                 .prettyPeek();

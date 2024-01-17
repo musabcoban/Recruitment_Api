@@ -23,10 +23,17 @@ public class AdminJobApplicationControllerStepDef {
         adminJobApplicationController_f.verifyAdminJobResponseBodyContainsData("totalPages");
         adminJobApplicationController_f.verifyAdminJobResponseBodyContainsData("totalCount");
     }
+
     @Given("I make a request with valid credentials for change status job application")
     public void i_make_a_request_with_valid_credentials_for_change_status_job_application() {
         adminJobApplicationController_f.getAdminJopApplicationControllerF();
-        adminJobApplicationController_f.changeInterviewStatus();
+        adminJobApplicationController_f.changeInterviewStatus(267);
+    }
+
+    @Given("I make a request with unvalid credentials for change status job application")
+    public void i_make_a_request_with_unvalid_credentials_for_change_status_job_application() {
+        adminJobApplicationController_f.getAdminJopApplicationControllerF();
+        adminJobApplicationController_f.changeInterviewStatus(270);
     }
 
 
