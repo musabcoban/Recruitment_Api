@@ -46,6 +46,7 @@ public class AdminJobApplicationController_F {
                 .header("Authorization","Bearer "+token)
                 .put(ConfigurationReader.get("url2")+"admin/jobApplication/changeStatus/"+applicationId)
                 .prettyPeek();
+
     }
 
 }
