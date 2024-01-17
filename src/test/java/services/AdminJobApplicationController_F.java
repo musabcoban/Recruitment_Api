@@ -26,7 +26,7 @@ public class AdminJobApplicationController_F {
                 .queryParam("sortBy","id")
                 .queryParam("sortDirection","asc")
                 .header("Authorization","Bearer "+token)
-                .get(ConfigurationReader.get("url22")+"admin/jobApplication/appliedJobs")
+                .get(ConfigurationReader.get("url2")+"admin/jobApplication/appliedJobs")
                 .prettyPeek();
         jsonPath=response.jsonPath();
         applicationId=jsonPath.getInt("data.data.applicationId[0]");
@@ -43,7 +43,7 @@ public class AdminJobApplicationController_F {
         response=given().contentType(ContentType.JSON)
                 .queryParam("interviewStatusId",263)
                 .header("Authorization","Bearer "+token)
-                .put(ConfigurationReader.get("url22")+"admin/jobApplication/changeStatus/"+applicationId)
+                .put(ConfigurationReader.get("url2")+"admin/jobApplication/changeStatus/"+applicationId)
                 .prettyPeek();
     }
 
