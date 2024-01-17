@@ -16,8 +16,7 @@ public class LoginStep_Defs {
 
     @Then("Verify response with status code {int} and response body")
     public void verify_response_with_status_code_and_response_body(Integer Code) {
-        login.verifyBody(Code);
-
+        login.verifyStatusCode(Code);
     }
 
 
