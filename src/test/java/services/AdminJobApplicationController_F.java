@@ -1,5 +1,6 @@
 package services;
 
+import enums.CREDENTIALS;
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -15,7 +16,7 @@ public class AdminJobApplicationController_F {
     Login login = new Login();
     JsonPath jsonPath;
     int applicationId;
-    String token =login.getToken(ConfigurationReader.get("fatma_admin"),ConfigurationReader.get("havva_pass"));
+    String token =login.getToken(CREDENTIALS.ADMIN.getEmail(),CREDENTIALS.ADMIN.getPassword());
 
     public void getAdminJopApplicationControllerF(){
         response= given().log().all()
@@ -26,7 +27,7 @@ public class AdminJobApplicationController_F {
                 .queryParam("sortBy","id")
                 .queryParam("sortDirection","asc")
                 .header("Authorization","Bearer "+token)
-                .get(ConfigurationReader.get("url22")+"admin/jobApplication/appliedJobs")
+                .get(ConfigurationReader.get("url2")+"admin/jobApplication/appliedJobs")
                 .prettyPeek();
         jsonPath=response.jsonPath();
         applicationId=jsonPath.getInt("data.data.applicationId[0]");
@@ -39,12 +40,13 @@ public class AdminJobApplicationController_F {
     public void verifyAdminJobResponseBodyContainsData(String dataControl){
         Assert.assertTrue(jsonPath.getString("data").contains(dataControl));
     }
-    public void changeInterviewStatus(){
-        given().contentType(ContentType.JSON)
-                .queryParam("interviewStatusId",263)
+    public void changeInterviewStatus(int interviewStatusId){
+        response=given().contentType(ContentType.JSON)
+                .queryParam("interviewStatusId",interviewStatusId)
                 .header("Authorization","Bearer "+token)
-                .put(ConfigurationReader.get("url22")+"admin/jobApplication/changeStatus/"+applicationId)
+                .put(ConfigurationReader.get("url2")+"admin/jobApplication/changeStatus/"+applicationId)
                 .prettyPeek();
+
     }
 
 }
