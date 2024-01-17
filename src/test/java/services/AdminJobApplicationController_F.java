@@ -1,5 +1,6 @@
 package services;
 
+import enums.CREDENTIALS;
 import io.cucumber.java.en.*;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -15,7 +16,7 @@ public class AdminJobApplicationController_F {
     Login login = new Login();
     JsonPath jsonPath;
     int applicationId;
-    String token =login.getToken(ConfigurationReader.get("fatma_admin"),ConfigurationReader.get("havva_pass"));
+    String token =login.getToken(CREDENTIALS.ADMIN.getEmail(),CREDENTIALS.ADMIN.getPassword());
 
     public void getAdminJopApplicationControllerF(){
         response= given().log().all()
@@ -45,6 +46,7 @@ public class AdminJobApplicationController_F {
                 .header("Authorization","Bearer "+token)
                 .put(ConfigurationReader.get("url2")+"admin/jobApplication/changeStatus/"+applicationId)
                 .prettyPeek();
+
     }
 
 }
