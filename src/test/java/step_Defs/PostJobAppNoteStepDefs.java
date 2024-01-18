@@ -2,7 +2,8 @@ package step_Defs;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import services.Admin.PostJobAppNoteServices;
+import services.PostJobAppNoteServices;
+
 
 public class PostJobAppNoteStepDefs {
     PostJobAppNoteServices postJobAppNoteServices=new PostJobAppNoteServices();
