@@ -11,6 +11,8 @@ public class PostJobAppNoteStepDefs {
     public void admin_makes_a_post_request_by_using_job_applicaion_id() {
         postJobAppNoteServices.postRequestNote();
 
+
+
     }
     @Then("Admin verifies that the status code for the post request is {int}")
     public void admin_verifies_that_the_status_code_for_the_post_request_is(Integer stCode) {
