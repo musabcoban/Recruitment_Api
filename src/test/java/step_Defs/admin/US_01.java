@@ -9,7 +9,6 @@ public class US_01 {
     @Given("Admin connects to the {string} end point with a valid candidate ID")
     public void adminConnectsToTheApiAdminCandidateCandidateIdEndPointWithAValidCandidateID(String str){
 
-
     }
 
 
