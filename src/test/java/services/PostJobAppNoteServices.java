@@ -25,6 +25,8 @@ public class PostJobAppNoteServices {
                 prettyPeek();
     }
 
-    public void verifyStatusCodeForJobApp(int statusCode){}
+    public void verifyStatusCodeForJobApp(int statusCode){
+        Assert.assertEquals(statusCode,response.statusCode());
+    }
 
 }
