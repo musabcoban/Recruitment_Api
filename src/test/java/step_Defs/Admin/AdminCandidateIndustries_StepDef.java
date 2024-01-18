@@ -1,4 +1,4 @@
-package step_Defs.admin;
+package step_Defs.Admin;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
