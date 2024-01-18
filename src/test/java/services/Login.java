@@ -9,7 +9,7 @@ public class Login {
     Response response;
     static String firstName;
     static String email;
-    static String token;
+    public static String token;
 
     public void loginRequest(){
         String loginBody="{\n" +
