@@ -1,11 +1,6 @@
 
-#Feature: Admin Candidate Industries
-#
-#  Scenario:  Candidate Industries with Valid Credentials
-#    Given I make a request with valid credentials for candidate industries with candidateId
-#    When the request is sent to the endpoint /api/admin/candidate/industries/{candidateId}
-#    Then the response status code should be 204
-#    And the response body should contain the following industries:
-#      | Experience Years ID | Industry ID |
-#      | 0                   | 0           |
 
+Feature: Admin Candidate Industries Controller
+  Scenario:  As an admin I should able to updates candidates' industries information in the system
+    Given Admin connects to the industries end point with a valid candidate ID and valid info
+    Then Verify industries response with status code 204
