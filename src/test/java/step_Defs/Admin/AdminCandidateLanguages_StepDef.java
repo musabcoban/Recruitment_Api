@@ -1,9 +1,7 @@
-package step_Defs.admin;
+package step_Defs.Admin;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import services.AdminInvite;
 import services.admin.AdminCandidateLanguages;
 
 public class AdminCandidateLanguages_StepDef {

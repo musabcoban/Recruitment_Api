@@ -1,4 +1,4 @@
-package step_Defs.admin;
+package step_Defs.Admin;
 
 public class CandidateController {
 
