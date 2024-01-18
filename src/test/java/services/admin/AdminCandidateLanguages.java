@@ -14,7 +14,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class AdminCandidateIndustries {
+public class AdminCandidateLanguages {
     Response response;
     Login login = new Login();
     JsonPath jsonPath;
@@ -23,31 +23,35 @@ public class AdminCandidateIndustries {
 
 
 
-    public void getIndustriesInfo(){
-        Map<String,Object> industriesInfo= new HashMap<>();
-        industriesInfo.put("experienceYearsId",36);
-        industriesInfo.put("industryId",44);
+    public void getLanguagesInfo(){
+        Map<String,Object> languagesInfo = new HashMap<>();
+        languagesInfo.put("languageId",251);
+        languagesInfo.put("languageLevelId",7);
 
-        List<Map<String,Object>> industriesBody = new ArrayList<>();
-        industriesBody.add(industriesInfo);
+        List<Map<String,Object>> languagesBody = new ArrayList<>();
+        languagesBody.add(languagesInfo);
 
 
 
-        Map<String, Object> industriesBody2=new HashMap<>();
-        industriesBody2.put("industries", industriesBody);
+        Map<String, Object> languagesBody2 =new HashMap<>();
+        languagesBody2.put("languages", languagesBody);
 
 
         response= given().log().all()
                 .contentType(ContentType.JSON)
-                .header("Authorization","Bearer "+token).body(industriesBody2)
+                .header("Authorization","Bearer "+token).body(languagesBody2)
                 .put(ConfigurationReader.get("url2")+"admin/candidate/industries/2088")
                 .prettyPeek();
 
-       
+
 
 
     }
-    public void verifyIndustriesStatusCode(int statusCode){
+    public void verifyLanguagesStatusCode(int statusCode){
         Assert.assertEquals(statusCode,response.statusCode());
     }
 }
+
+
+
+
