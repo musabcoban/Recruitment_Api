@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="FinalAPI_TalRise" />
+        <module name="Recruitment_api" />
       </profile>
     </annotationProcessing>
   </component>
